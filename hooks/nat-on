@@ -1,0 +1,9 @@
+IPTABLES="/usr/sbin/iptables"
+
+case ${ANYCONNECT_NAT} in
+	[Nn][Oo] | '')
+		;;
+	*)
+		${IPTABLES} -t nat -I POSTROUTING -o ${TUNDEV} -j MASQUERADE
+		;;
+esac

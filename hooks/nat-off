@@ -1,0 +1,3 @@
+IPTABLES="/usr/sbin/iptables"
+
+${IPTABLES} -t nat -D POSTROUTING -o ${TUNDEV} -j MASQUERADE
